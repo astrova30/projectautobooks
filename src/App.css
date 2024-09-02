@@ -35,4 +35,26 @@
   to {
     transform: rotate(360deg);
   }
+  
+}
+
+/* Ejemplo de estilos para el navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 6px;
+  box-shadow: 0 1px 3px -2px black;
+  position: fixed; /* Mantener el navbar fijo en la parte superior */
+  width: 100%; /* Asegurarse de que el navbar ocupe el ancho completo */
+  top: 0; /* Posicionarlo en la parte superior */
+  left: 0;
+  z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+}
+
+/* Ajustar el hero para que no se solape con el navbar */
+.hero-section {
+  margin-top: 60px; /* Ajustar según la altura del navbar */
+  padding: 60px 20px;
+  background: url('./Components/Assets/biblioteca.avif') no-repeat center center/cover;
+  color: white;
 }

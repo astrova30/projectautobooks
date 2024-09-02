@@ -1,115 +1,169 @@
-/* estilos del la barra de navegacion */
+/* Estilos del navbar */
 .navbar {
-    background-color: #fdd835;
+    background-color: #f4f1ea; /* Fondo beige suave */
     display: flex;
-    justify-content: space-around;
-    padding: 1px;
-    box-shadow: 0 1px 3px -2px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px; /* Más espacio interno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #dcdcdc; /* Línea sutil en la parte inferior */
+    text-decoration: none; /* Esto va sin subrayado */
 }
-.nav-logo{
+
+.nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-
+    gap: 20px;
 }
-.nav-logo p{
-    color: #000000; 
-    font-size: 38px;
+
+.nav-logo img {
+    height: 100px; /* Tamaño del logo más pequeño para mayor balance */
+}
+
+.nav-logo p {
+    color: #4a3f35;
+    font-size: 28px; /* Tamaño de fuente ajustado */
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
     list-style: none;
-    gap: 50px;
-    color: #000000;
-    font-size: 20px;
+    gap: 0px;
+    color: #626262;
+    font-size: 10px;
     font-weight: 500;
+    position: relative;
+    padding-left: 1%;
 }
-.nav-menu li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
+.nav-menu a {
+    text-decoration: none; /* Esto va sin subrayado */
+    color: inherit; /* Esto por acá mantiene el color definido en */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.nav-menu li {
+    position:relative;
+    color: #4a3f35;
+    padding:  12px 18px;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Esto va sin subrayado */
+    
+
 }
-.nav-menu hr{
-    border: none;
-    width: 80%;
+
+/* Línea animada debajo de los elementos del menú */
+.nav-menu li::after {
+    content: '';
+    display: block;
     height: 3px;
-    border-radius: 10px;
-    background: #FF4141;
+    top: 36px;
+    width: 0px;
+    background: #8b5e3c; /* Color de la línea */
+    position: absolute;
+    text-decoration: none; /* Esto va sin subrayado */
+    transition: width 0.3s ease; /* Transición suave para la línea */
+    
+
 }
-.nav-login-cart{
+
+/* Expande la línea al pasar el ratón */
+.nav-menu li:hover::after {
+    width: 75%; /* Expande la línea al 100% al pasar el ratón */
+    text-decoration: none;
+}
+
+
+.nav-search {
     display: flex;
-    align-items: center;
-    gap: 45PX;
-}
-.nav-login-cart button{
-    width: 157px;
-    height: 58px;
-    outline: none;
-    border: 1px s;
+    gap: 10px;
+    background-color: #fff; /* Fondo blanco para la barra de búsqueda */
+    padding: 4px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-right: -35px; /* Espacio entre la barra de búsqueda y el ícono de lupa */
 }
 
-
-
-
-
-
-.logo-text {
-    font-size: 1.8em; 
-    font-weight: bold;
+.nav-search input {
+    border: 1px solid #8b5e3c;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 200px; /* Ancho ajustado */
+    display: block;
 }
-nav {
-    display: flex;
-    align-items: center;
-}
-nav button {
-    background: none;
+
+.nav-search button {
+    padding: 8px 15px;
     border: none;
-    margin-left: 20px;
+    border-radius: 20px;
+    background-color: #4a3f35;
+    color: #fff;
+    font-size: 10px;
     cursor: pointer;
-    font-size: 1em; 
-    display: flex;
-    align-items: center;
+    transition: background-color 0.3s ease;
     font: oblique bold 100% cursive;
 }
-nav button:hover {
-    text-decoration: underline;
+
+.nav-search button:hover {
+    background-color: #3b745e;
 }
-.icon {
-    width: 24px; 
-    height: 24px;
-    margin-right: 5px;
-}
-main {
+
+.nav-search-icon {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-.welcome-container {
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 140px); 
-}
-.welcome-container h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-.welcome-container p {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-.cta-button {
-    background-color: white;
-    border: 10%;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
-    font: oblique bold 80% cursive;
+    font-size: 24px; /* Tamaño del ícono */
+    color: #4a3f35;
+    transition: color 0.3s ease;
+    margin-left: -50px; /* Espacio entre la lupa y la barra de búsqueda */
+    margin-right: -70px;
 }
-.cta-button:hover {
-    background-color: #e6b800;
+
+.nav-search-icon:hover {
+    color: #8b5e3c;
+}
+
+.nav-buttons {
+    display: flex;
+    margin-left: -50px;
+    gap: 20px; /* Mayor separación entre botones */
+}
+
+.nav-buttons button {
+    padding: 10px 20px;
+    margin-left: 30px;
+    margin-right: 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4a3f35;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font: oblique bold 100% cursive;
+}
+
+.nav-buttons button:hover {
+    background-color: #3b745e;
+    transform: scale(1.05);
+}
+
+.nav-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #8b5e3c;
+}
+
+/* Estilo para la barra de búsqueda cuando está visible */
+.nav-search-container .nav-search {
+    display: flex; /* Mostrar la barra de búsqueda cuando se activa */
 }

@@ -1,0 +1,82 @@
+/* Estilos para el contenedor de inicio de sesión */
+.login-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: #ffffff; /* Fondo blanco limpio */
+    text-align: center;
+    position: relative;
+    border: 1px solid #e0e0e0; /* Borde sutil para definición */
+}
+
+/* Estilo para el título */
+h2 {
+    margin-bottom: 20px;
+    color: #333333; /* Gris oscuro para el título */
+    font-size: 26px; /* Tamaño de fuente ajustado */
+    font-weight: 700; /* Fuente audaz */
+}
+
+/* Estilo para el formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los elementos del formulario */
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555; /* Gris medio para las etiquetas */
+    font-weight: 500;
+}
+
+/* Estilo para los campos de entrada */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px; /* Bordes más redondeados */
+    border: 1px solid #cccccc; /* Gris claro */
+    background-color: #fafafa; /* Fondo muy claro para los campos */
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para el enfoque en los campos de entrada */
+input:focus {
+    border-color: #007bff; /* Azul brillante al enfocar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Sombra azul */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.login-button {
+    padding: 12px 20px;
+    background-color: #007bff; /* Azul brillante */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px; /* Espacio superior para separar del campo de entrada */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.login-button:hover {
+    background-color: #0056b3; /* Azul oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilo para los mensajes de error (opcional) */
+.error-message {
+    color: #dc3545; /* Rojo para mensajes de error */
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
