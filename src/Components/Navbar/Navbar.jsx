@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../Assets/logotipo.png';
-import { FaSearch } from 'react-icons/fa'; // Importación correcta del ícono
-import { Link } from 'react-router-dom'
-
+import { FaSearch } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Context/AuthContext'; // Cambiar la importación a useAuth  
 
 const Navbar = () => {
-    const [menu,setMenu] = useState();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [menu, setMenu] = useState();
+    const { isLoggedIn, logout } = useAuth(); // Usar useAuth para acceder al contexto
     const [searchVisible, setSearchVisible] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate(); 
 
     const handleSearch = (event) => {
         event.preventDefault();
         console.log("Buscando:", searchTerm);
-        // Aquí podrías agregar la lógica para realizar la búsqueda
+    };
+
+    const handleAuthButtonClick = () => {
+        if (isLoggedIn) {
+            logout();
+        } else {
+            navigate('/login');
+        }
     };
 
     return (
@@ -25,19 +33,17 @@ const Navbar = () => {
             </div>
 
             <ul className='nav-menu'>
-                <li onClick={()=> {setMenu("inicio")}}><Link to= '/'>Inicio</Link>{menu === "inicio"?<hr/>:<></>}</li>
-                <li onClick={()=> {setMenu("catalogo")}}><Link to = 'catalogo'>Catálogo</Link>{menu ==="catalogo"?<hr/>:<></>}</li>
-                <li onClick={()=> {setMenu("quienes_somos")}}><Link to = 'quienes_somos'>¿Quienes Somos?</Link>{menu ==="quienes_somos"?<hr/>:<></>}</li>
+                <li onClick={() => { setMenu("inicio") }}><Link to='/'>Inicio</Link>{menu === "inicio" ? <hr /> : <></>}</li>
+                <li onClick={() => { setMenu("catalogo") }}><Link to='catalogo'>Catálogo</Link>{menu === "catalogo" ? <hr /> : <></>}</li>
+                <li onClick={() => { setMenu("quienes_somos") }}><Link to='quienes_somos'>Nosotros</Link>{menu === "quienes_somos" ? <hr /> : <></>}</li>
 
-                {isLoggedIn && <li>Gestión de Préstamos</li>}
+                {isLoggedIn && <li><Link to='/prestamos'>Préstamos</Link></li>}
             </ul>
-
 
             <div className='nav-search-icon' onClick={() => setSearchVisible(!searchVisible)}>
                 <FaSearch />
             </div>
 
-            {/* Barra de Búsqueda */}
             {searchVisible && (
                 <form className='nav-search' onSubmit={handleSearch}>
                     <input 
@@ -51,7 +57,7 @@ const Navbar = () => {
             )}
 
             <div className='nav-buttons'>
-                <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+                <button onClick={handleAuthButtonClick}>
                     {isLoggedIn ? 'Cerrar Sesión' : 'Iniciar Sesión'}
                 </button>
             </div>
@@ -60,4 +66,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-

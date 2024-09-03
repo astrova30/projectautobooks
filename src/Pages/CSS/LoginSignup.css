@@ -1,82 +1,123 @@
-/* Estilos para el contenedor de inicio de sesión */
 .login-container {
     width: 350px;
     margin: 100px auto;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    background: #ffffff; /* Fondo blanco limpio */
+    box-shadow: 0 8px 16px rgba(83, 53, 28, 0.3); 
+    background-color: #f3e5d0; 
     text-align: center;
     position: relative;
-    border: 1px solid #e0e0e0; /* Borde sutil para definición */
+    border: 1px solid hsl(34, 70%, 70%); 
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-family: oblique bold 100% cursive;
 }
 
-/* Estilo para el título */
+.login-container:hover {
+    box-shadow: 0 0 15px 3px rgba(139, 69, 19, 0.7); 
+}
+
 h2 {
     margin-bottom: 20px;
-    color: #333333; /* Gris oscuro para el título */
-    font-size: 26px; /* Tamaño de fuente ajustado */
-    font-weight: 700; /* Fuente audaz */
+    color: #5d4037; 
+    font-size: 28px; 
+    font-weight: 700;
+    font-family: oblique bold 100% cursive;
 }
 
-/* Estilo para el formulario */
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaciado entre los elementos del formulario */
+    gap: 15px;
+    font-family: oblique bold 100% cursive;
 }
 
-/* Estilo para las etiquetas */
 label {
     display: block;
-    margin-bottom: 5px;
-    color: #555555; /* Gris medio para las etiquetas */
-    font-weight: 500;
+    margin-bottom: 10px;
+    color: #6d4c41;
+    font-weight: 400;
+    text-align: left;
+    font-size: 14px;
+    font-family: oblique bold 100% cursive;
 }
 
-/* Estilo para los campos de entrada */
 input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px; /* Bordes más redondeados */
-    border: 1px solid #cccccc; /* Gris claro */
-    background-color: #fafafa; /* Fondo muy claro para los campos */
-    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a1887f;
+    background-color: #f9f4ef;
     font-size: 16px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: oblique bold 100% cursive;
 }
 
-/* Estilo para el enfoque en los campos de entrada */
+/* Placeholder de los inputs */
+input::placeholder {
+    font-family: oblique bold 100% cursive; /* Fuente para el placeholder */
+    color: #a1887f; /* Color marrón claro para el placeholder */
+    font-weight: 400;
+}
+
+/* Efecto al enfocar los campos de entrada */
 input:focus {
-    border-color: #007bff; /* Azul brillante al enfocar */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Sombra azul */
+    border-color: #8b4513;
+    box-shadow: 0 0 8px rgba(139, 69, 19, 0.3);
 }
 
-/* Estilo para el botón de inicio de sesión */
+/* Estilo para el contenedor del enlace de "Olvidaste tu contraseña" */
+.link {
+    margin-top: 15px;
+}
+
+/* Estilo para los enlaces dentro del contenedor */
+.link a {
+    color: #8b5e3c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: oblique bold 100% cursive;
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
+.link a:hover {
+    color: #6e4227;
+    text-decoration: underline;
+}
+
+/* Expande la línea al pasar el ratón */
+.link a:hover::after {
+    width: 75%;
+    text-decoration: none;
+}
+
+/* Botón de inicio de sesión */
 .login-button {
     padding: 12px 20px;
-    background-color: #007bff; /* Azul brillante */
-    color: #ffffff;
+    background-color: #8b5e3c;
+    color: white;
     border: none;
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 20px; /* Espacio superior para separar del campo de entrada */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(83, 53, 28, 0.2);
+    font-family: oblique bold 100% cursive;
 }
 
 /* Efecto al pasar el ratón sobre el botón */
 .login-button:hover {
-    background-color: #0056b3; /* Azul oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #6e4227;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(83, 53, 28, 0.3);
 }
 
-/* Estilo para los mensajes de error (opcional) */
+/* Mensajes de error */
 .error-message {
-    color: #dc3545; /* Rojo para mensajes de error */
+    color: #b71c1c;
     font-size: 14px;
     margin-top: -10px;
     margin-bottom: 15px;
+    font-weight: 500;
 }

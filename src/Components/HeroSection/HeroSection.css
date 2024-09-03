@@ -1,33 +1,62 @@
 .hero-section {
-  margin-top: 60px; /* Ajustar según la altura del navbar */
-  padding: 60px 20px;
-  background: url('../Assets/biblioteca.avif') no-repeat center center/cover;
-  opacity: 95%;
-  color: white;
-  text-align: center
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajusta la altura según sea necesario */
+  background: url('../Assets/biblioteca.avif') no-repeat center center/cover; /* Cambia la URL de la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Superposición negra */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Opacidad del 50% */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white; /* Color del texto */
+  text-align: center;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-
+  color: #ffffff; /* Blanco claro para el título */
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #dddddd; /* Gris claro para el párrafo */
 }
 
+/* Estilos para los botones */
 .btn {
-  display: inline-block;
+  background-color: #8b5e3c; /* Color marrón clásico */
+  color: white;
   padding: 10px 20px;
-  margin: 10px;
-  color: #fff;
-  background: #a7682e;
+  margin: 0 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
   text-decoration: none;
-  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Efecto hover en los botones */
 .btn:hover {
-  background: #a7682e;
+  background-color: #6e4227; /* Marrón más oscuro al pasar el ratón */
+  transform: translateY(-3px); /* Efecto de elevación */
 }
